@@ -90,8 +90,3 @@ O projeto foi desenvolvido com foco em organização, performance e uma boa expe
 Se quiser contribuir, fique à vontade para abrir uma issue ou mandar um pull request.
 Sugestões e melhorias são sempre bem-vindas.
 
----
-
-## Licença
-
-Licença MIT.
