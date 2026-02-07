@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // output: 'export', // Comentado para permitir API routes
+  output: 'export',
   images: {
     unoptimized: true,
     remotePatterns: [
