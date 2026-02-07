@@ -3,7 +3,7 @@
 Indeciso e já perdeu mais tempo escolhendo do que assistindo?
 O **Escolhe Pra Mim** nasceu justamente pra resolver isso.
 
-A ideia é simples: você diz o que está com vontade de ver (filme ou série), escolhe alguns gêneros e os streamings que você assina — e a aplicação faz o resto, trazendo uma sugestão aleatória pra você só apertar o play.
+A ideia é simples: você diz o que está com vontade de ver (filme ou série), escolhe alguns gêneros e os streamings que você assina e a aplicação faz o resto, trazendo uma sugestão aleatória pra você só apertar o play.
 
 <img width="1172" height="647" alt="image" src="https://github.com/user-attachments/assets/ba1d7865-c54a-42d1-bf02-bb256786b92a" />
 
