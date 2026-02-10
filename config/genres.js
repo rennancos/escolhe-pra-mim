@@ -1,0 +1,55 @@
+export const VIRTUAL_GENRES = [
+  { id: -2001, name: "Comédia de ação", map: [35, 28] },
+  { id: -2002, name: "Comédia de terror", map: [35, 27] },
+  { id: -2003, name: "Comédia dramática", map: [35, 18] },
+  { id: -2004, name: "Comédia romântica", map: [35, 10749] },
+  { id: -2005, name: "Docuficção", map: [99, 18] },
+  { id: -2006, name: "Espionagem", map: [28, 53] },
+  { id: -2007, name: "Fantasia científica", map: [14, 878] },
+  { id: -2008, name: "Filme épico", map: [36, 12] },
+  { id: -2009, name: "Filmes com truques", map: [14, 12] },
+  { id: -2010, name: "Filmes de guerra", map: [10752] },
+  { id: -2011, name: "Filme policial", map: [80, 53] },
+  { id: -2012, name: "Musical", map: [10402] }, // alias para "Música"
+  { id: -2013, name: "Cinema de arte", map: [18] }, // alias para "Drama"
+  { id: -2014, name: "Dança", map: [10402] }, // próximo de "Música"
+];
+
+export const STATIC_GENRES = {
+  movie: [
+    { id: 28, name: "Ação" },
+    { id: 12, name: "Aventura" },
+    { id: 16, name: "Animação" },
+    { id: 35, name: "Comédia" },
+    { id: 80, name: "Crime" },
+    { id: 99, name: "Documentário" },
+    { id: 18, name: "Drama" },
+    { id: 10751, name: "Família" },
+    { id: 14, name: "Fantasia" },
+    { id: 36, name: "História" },
+    { id: 27, name: "Terror" },
+    { id: 10402, name: "Música" },
+    { id: 9648, name: "Mistério" },
+    { id: 10749, name: "Romance" },
+    { id: 878, name: "Ficção Científica" },
+    { id: 10752, name: "Guerra" },
+    { id: 37, name: "Faroeste" },
+  ],
+  series: [
+    { id: 10759, name: "Ação e Aventura" },
+    { id: 16, name: "Animação" },
+    { id: 35, name: "Comédia" },
+    { id: 80, name: "Crime" },
+    { id: 99, name: "Documentário" },
+    { id: 18, name: "Drama" },
+    { id: 10751, name: "Família" },
+    { id: 10762, name: "Infantil" },
+    { id: 9648, name: "Mistério" },
+    { id: 10764, name: "Reality" },
+    { id: 10765, name: "Ficção Científica e Fantasia" },
+    { id: 10766, name: "Novela" },
+    { id: 10767, name: "Talk Show" },
+    { id: 10768, name: "Guerra e Política" },
+    { id: 37, name: "Faroeste" },
+  ],
+};
