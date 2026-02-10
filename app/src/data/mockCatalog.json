@@ -1,0 +1,606 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "O Poderoso Chefão",
+      "type": "movie",
+      "genres": ["Drama", "Crime"],
+      "streaming": ["Netflix", "Prime Video"],
+      "overview": "A história da família Corleone, uma das mais poderosas famílias mafiosas da América.",
+      "rating": 9.2,
+      "year": 1972
+    },
+    {
+      "id": 2,
+      "title": "Interestelar",
+      "type": "movie",
+      "genres": ["Ficção Científica", "Drama", "Aventura"],
+      "streaming": ["Netflix", "Prime Video"],
+      "overview": "Um grupo de exploradores espaciais viaja através de um buraco de minhoca em busca de um novo lar para a humanidade.",
+      "rating": 8.7,
+      "year": 2014
+    },
+    {
+      "id": 3,
+      "title": "Vingadores: Ultimato",
+      "type": "movie",
+      "genres": ["Ação", "Aventura", "Ficção Científica"],
+      "streaming": ["Disney+"],
+      "overview": "Os Vingadores restantes tentam reverter o estalo de Thanos e restaurar o universo.",
+      "rating": 8.4,
+      "year": 2019
+    },
+    {
+      "id": 4,
+      "title": "O Senhor dos Anéis: O Retorno do Rei",
+      "type": "movie",
+      "genres": ["Aventura", "Fantasia", "Ação"],
+      "streaming": ["HBO Max", "Prime Video"],
+      "overview": "Gandalf e Aragorn lideram o mundo dos homens contra o exército de Sauron.",
+      "rating": 9.0,
+      "year": 2003
+    },
+    {
+      "id": 5,
+      "title": "Parasita",
+      "type": "movie",
+      "genres": ["Drama", "Suspense", "Comédia"],
+      "streaming": ["Prime Video", "Apple TV+"],
+      "overview": "Uma família pobre se infiltra na vida de uma família rica, com consequências inesperadas.",
+      "rating": 8.5,
+      "year": 2019
+    },
+    {
+      "id": 6,
+      "title": "Coringa",
+      "type": "movie",
+      "genres": ["Drama", "Crime", "Suspense"],
+      "streaming": ["HBO Max", "Prime Video"],
+      "overview": "A origem do icônico vilão do Batman, explorando sua transformação de comediante fracassado em criminoso.",
+      "rating": 8.4,
+      "year": 2019
+    },
+    {
+      "id": 7,
+      "title": "Pulp Fiction",
+      "type": "movie",
+      "genres": ["Crime", "Drama"],
+      "streaming": ["Netflix", "Prime Video"],
+      "overview": "Várias histórias interligadas de criminosos de Los Angeles.",
+      "rating": 8.9,
+      "year": 1994
+    },
+    {
+      "id": 8,
+      "title": "A Origem",
+      "type": "movie",
+      "genres": ["Ação", "Ficção Científica", "Suspense"],
+      "streaming": ["Netflix", "Prime Video"],
+      "overview": "Um ladrão que invade os sonhos das pessoas para roubar segredos corporativos.",
+      "rating": 8.8,
+      "year": 2010
+    },
+    {
+      "id": 9,
+      "title": "O Silêncio dos Inocentes",
+      "type": "movie",
+      "genres": ["Terror", "Crime", "Suspense"],
+      "streaming": ["Prime Video", "HBO Max"],
+      "overview": "Uma agente do FBI busca a ajuda de um canibal encarcerado para capturar um serial killer.",
+      "rating": 8.6,
+      "year": 1991
+    },
+    {
+      "id": 10,
+      "title": "Toy Story",
+      "type": "movie",
+      "genres": ["Animação", "Aventura", "Comédia"],
+      "streaming": ["Disney+"],
+      "overview": "Brinquedos ganham vida quando os humanos não estão por perto.",
+      "rating": 8.3,
+      "year": 1995
+    },
+    {
+      "id": 11,
+      "title": "O Lobo de Wall Street",
+      "type": "movie",
+      "genres": ["Comédia", "Crime", "Drama"],
+      "streaming": ["Netflix", "Prime Video"],
+      "overview": "A história real de Jordan Belfort, um corretor de ações corrupto.",
+      "rating": 8.2,
+      "year": 2013
+    },
+    {
+      "id": 12,
+      "title": "Matrix",
+      "type": "movie",
+      "genres": ["Ação", "Ficção Científica"],
+      "streaming": ["HBO Max", "Prime Video"],
+      "overview": "Um hacker descobre a verdade sobre sua realidade e sua guerra contra seus controladores.",
+      "rating": 8.7,
+      "year": 1999
+    },
+    {
+      "id": 13,
+      "title": "Forrest Gump",
+      "type": "movie",
+      "genres": ["Drama", "Romance", "Comédia"],
+      "streaming": ["Netflix", "Prime Video"],
+      "overview": "A história de um homem simples que testemunha eventos históricos importantes.",
+      "rating": 8.8,
+      "year": 1994
+    },
+    {
+      "id": 14,
+      "title": "O Exorcista",
+      "type": "movie",
+      "genres": ["Terror"],
+      "streaming": ["HBO Max", "Prime Video"],
+      "overview": "Uma mãe busca ajuda para salvar sua filha possuída por uma entidade demoníaca.",
+      "rating": 8.1,
+      "year": 1973
+    },
+    {
+      "id": 15,
+      "title": "Vingadores: Guerra Infinita",
+      "type": "movie",
+      "genres": ["Ação", "Aventura", "Ficção Científica"],
+      "streaming": ["Disney+"],
+      "overview": "Os Vingadores tentam impedir Thanos de coletar as Joias do Infinito.",
+      "rating": 8.4,
+      "year": 2018
+    },
+    {
+      "id": 16,
+      "title": "O Grande Hotel Budapeste",
+      "type": "movie",
+      "genres": ["Comédia", "Drama", "Aventura"],
+      "streaming": ["Disney+", "Prime Video"],
+      "overview": "As aventuras de um concierge lendário e seu jovem empregado.",
+      "rating": 8.1,
+      "year": 2014
+    },
+    {
+      "id": 17,
+      "title": "Duna",
+      "type": "movie",
+      "genres": ["Ficção Científica", "Aventura", "Drama"],
+      "streaming": ["HBO Max", "Prime Video"],
+      "overview": "Paul Atreides deve viajar para o planeta mais perigoso do universo.",
+      "rating": 8.0,
+      "year": 2021
+    },
+    {
+      "id": 18,
+      "title": "Pantera Negra",
+      "type": "movie",
+      "genres": ["Ação", "Aventura", "Ficção Científica"],
+      "streaming": ["Disney+"],
+      "overview": "T'Challa retorna a Wakanda para assumir o trono após a morte de seu pai.",
+      "rating": 7.3,
+      "year": 2018
+    },
+    {
+      "id": 19,
+      "title": "A Rede Social",
+      "type": "movie",
+      "genres": ["Drama", "Biografia"],
+      "streaming": ["Netflix", "Prime Video"],
+      "overview": "A história da criação do Facebook por Mark Zuckerberg.",
+      "rating": 7.8,
+      "year": 2010
+    },
+    {
+      "id": 20,
+      "title": "Homem-Aranha: Sem Volta Para Casa",
+      "type": "movie",
+      "genres": ["Ação", "Aventura", "Ficção Científica"],
+      "streaming": ["Star+", "Prime Video"],
+      "overview": "Peter Parker pede ajuda ao Doutor Estranho para que o mundo esqueça sua identidade.",
+      "rating": 8.2,
+      "year": 2021
+    },
+    {
+      "id": 21,
+      "title": "O Auto da Compadecida",
+      "type": "movie",
+      "genres": ["Comédia", "Aventura"],
+      "streaming": ["Globoplay", "Prime Video"],
+      "overview": "As aventuras de João Grilo e Chicó no sertão nordestino.",
+      "rating": 8.6,
+      "year": 2000
+    },
+    {
+      "id": 22,
+      "title": "Tropa de Elite",
+      "type": "movie",
+      "genres": ["Ação", "Crime", "Drama"],
+      "streaming": ["Netflix", "Prime Video", "Globoplay"],
+      "overview": "A rotina do Capitão Nascimento, comandante do BOPE no Rio de Janeiro.",
+      "rating": 8.1,
+      "year": 2007
+    },
+    {
+      "id": 23,
+      "title": "Cidade de Deus",
+      "type": "movie",
+      "genres": ["Crime", "Drama"],
+      "streaming": ["Netflix", "Prime Video", "Globoplay"],
+      "overview": "A história do crescimento do crime organizado em uma favela do Rio de Janeiro.",
+      "rating": 8.6,
+      "year": 2002
+    },
+    {
+      "id": 24,
+      "title": "Central do Brasil",
+      "type": "movie",
+      "genres": ["Drama"],
+      "streaming": ["Globoplay", "Prime Video"],
+      "overview": "Uma ex-professora que escreve cartas para analfabetos encontra um menino perdido.",
+      "rating": 8.0,
+      "year": 1998
+    },
+    {
+      "id": 25,
+      "title": "Que Horas Ela Volta?",
+      "type": "movie",
+      "genres": ["Drama", "Comédia"],
+      "streaming": ["Netflix", "Globoplay"],
+      "overview": "Uma empregada doméstica enfrenta conflitos quando sua filha visita a casa de seus patrões.",
+      "rating": 7.8,
+      "year": 2015
+    },
+    {
+      "id": 26,
+      "title": "Bacurau",
+      "type": "movie",
+      "genres": ["Suspense", "Drama", "Ficção Científica"],
+      "streaming": ["Prime Video", "Globoplay"],
+      "overview": "Os moradores de um pequeno vilarejo descobrem que a cidade sumiu do mapa.",
+      "rating": 7.5,
+      "year": 2019
+    },
+    {
+      "id": 27,
+      "title": "Minha Mãe é uma Peça",
+      "type": "movie",
+      "genres": ["Comédia"],
+      "streaming": ["Netflix", "Globoplay"],
+      "overview": "Dona Hermínia é uma mãe solteira que enfrenta as dificuldades de criar seus filhos.",
+      "rating": 6.8,
+      "year": 2013
+    },
+    {
+      "id": 28,
+      "title": "O Menino que Descobriu o Vento",
+      "type": "movie",
+      "genres": ["Drama", "Biografia"],
+      "streaming": ["Netflix"],
+      "overview": "Um menino malauiano constrói uma turbina eólica para salvar sua vila da fome.",
+      "rating": 7.6,
+      "year": 2019
+    },
+    {
+      "id": 29,
+      "title": "Roma",
+      "type": "movie",
+      "genres": ["Drama"],
+      "streaming": ["Netflix"],
+      "overview": "A vida de uma empregada doméstica no México dos anos 70.",
+      "rating": 7.7,
+      "year": 2018
+    },
+    {
+      "id": 30,
+      "title": "O Poço",
+      "type": "movie",
+      "genres": ["Terror", "Ficção Científica", "Suspense"],
+      "streaming": ["Netflix"],
+      "overview": "Prisioneiros em uma torre vertical devem se alimentar de uma plataforma que desce.",
+      "rating": 7.0,
+      "year": 2019
+    }
+  ],
+  "series": [
+    {
+      "id": 101,
+      "title": "Breaking Bad",
+      "type": "series",
+      "genres": ["Drama", "Crime", "Suspense"],
+      "streaming": ["Netflix"],
+      "overview": "Um professor de química com câncer terminal começa a produzir metanfetamina.",
+      "rating": 9.5,
+      "year": 2008
+    },
+    {
+      "id": 102,
+      "title": "Game of Thrones",
+      "type": "series",
+      "genres": ["Ação", "Aventura", "Drama", "Fantasia"],
+      "streaming": ["HBO Max"],
+      "overview": "Famílias nobres disputam o controle do Trono de Ferro dos Sete Reinos.",
+      "rating": 9.2,
+      "year": 2011
+    },
+    {
+      "id": 103,
+      "title": "Stranger Things",
+      "type": "series",
+      "genres": ["Ficção Científica", "Terror", "Drama"],
+      "streaming": ["Netflix"],
+      "overview": "Crianças investigam o desaparecimento de um amigo e descobrem segredos sobrenaturais.",
+      "rating": 8.7,
+      "year": 2016
+    },
+    {
+      "id": 104,
+      "title": "The Mandalorian",
+      "type": "series",
+      "genres": ["Ação", "Aventura", "Ficção Científica"],
+      "streaming": ["Disney+"],
+      "overview": "Um caçador de recompensas solitário protege uma criança misteriosa.",
+      "rating": 8.7,
+      "year": 2019
+    },
+    {
+      "id": 105,
+      "title": "The Office",
+      "type": "series",
+      "genres": ["Comédia"],
+      "streaming": ["Netflix", "Prime Video"],
+      "overview": "O dia a dia de funcionários de um escritório de vendas de papel.",
+      "rating": 9.0,
+      "year": 2005
+    },
+    {
+      "id": 106,
+      "title": "Black Mirror",
+      "type": "series",
+      "genres": ["Ficção Científica", "Suspense", "Drama"],
+      "streaming": ["Netflix"],
+      "overview": "Antologia que explora a relação entre tecnologia e sociedade.",
+      "rating": 8.7,
+      "year": 2011
+    },
+    {
+      "id": 107,
+      "title": "Succession",
+      "type": "series",
+      "genres": ["Drama"],
+      "streaming": ["HBO Max"],
+      "overview": "Uma família bilionária luta pelo controle de seu império de mídia.",
+      "rating": 8.8,
+      "year": 2018
+    },
+    {
+      "id": 108,
+      "title": "The Witcher",
+      "type": "series",
+      "genres": ["Ação", "Aventura", "Fantasia"],
+      "streaming": ["Netflix"],
+      "overview": "Um caçador de monstros solitário luta para encontrar seu lugar no mundo.",
+      "rating": 8.0,
+      "year": 2019
+    },
+    {
+      "id": 109,
+      "title": "Friends",
+      "type": "series",
+      "genres": ["Comédia", "Romance"],
+      "streaming": ["HBO Max", "Prime Video"],
+      "overview": "Seis amigos enfrentam as alturas e baixos da vida em Nova York.",
+      "rating": 8.9,
+      "year": 1994
+    },
+    {
+      "id": 110,
+      "title": "The Boys",
+      "type": "series",
+      "genres": ["Ação", "Comédia", "Ficção Científica"],
+      "streaming": ["Prime Video"],
+      "overview": "Um grupo de vigilantes luta contra super-heróis corruptos.",
+      "rating": 8.7,
+      "year": 2019
+    },
+    {
+      "id": 111,
+      "title": "Dark",
+      "type": "series",
+      "genres": ["Suspense", "Ficção Científica", "Drama"],
+      "streaming": ["Netflix"],
+      "overview": "O desaparecimento de crianças em uma cidade alemã revela segredos sobrenaturais.",
+      "rating": 8.7,
+      "year": 2017
+    },
+    {
+      "id": 112,
+      "title": "The Crown",
+      "type": "series",
+      "genres": ["Drama", "Biografia", "História"],
+      "streaming": ["Netflix"],
+      "overview": "A história do reinado da Rainha Elizabeth II.",
+      "rating": 8.6,
+      "year": 2016
+    },
+    {
+      "id": 113,
+      "title": "WandaVision",
+      "type": "series",
+      "genres": ["Ação", "Comédia", "Drama", "Ficção Científica"],
+      "streaming": ["Disney+"],
+      "overview": "Wanda e Visão vivem uma vida suburbana ideal que esconde segredos.",
+      "rating": 7.9,
+      "year": 2021
+    },
+    {
+      "id": 114,
+      "title": "Loki",
+      "type": "series",
+      "genres": ["Ação", "Aventura", "Ficção Científica"],
+      "streaming": ["Disney+"],
+      "overview": "O deus da trapaça trabalha para a Autoridade de Variância Temporal.",
+      "rating": 8.2,
+      "year": 2021
+    },
+    {
+      "id": 115,
+      "title": "House of the Dragon",
+      "type": "series",
+      "genres": ["Ação", "Aventura", "Drama", "Fantasia"],
+      "streaming": ["HBO Max"],
+      "overview": "A história da Casa Targaryen 200 anos antes de Game of Thrones.",
+      "rating": 8.4,
+      "year": 2022
+    },
+    {
+      "id": 116,
+      "title": "The Last of Us",
+      "type": "series",
+      "genres": ["Drama", "Terror", "Ação"],
+      "streaming": ["HBO Max"],
+      "overview": "Em um mundo pós-apocalíptico, Joel protege uma jovem chamada Ellie.",
+      "rating": 8.8,
+      "year": 2023
+    },
+    {
+      "id": 117,
+      "title": "Severance",
+      "type": "series",
+      "genres": ["Drama", "Suspense", "Ficção Científica"],
+      "streaming": ["Apple TV+"],
+      "overview": "Funcionários de uma empresa dividem suas memórias entre trabalho e vida pessoal.",
+      "rating": 8.7,
+      "year": 2022
+    },
+    {
+      "id": 118,
+      "title": "Ted Lasso",
+      "type": "series",
+      "genres": ["Comédia", "Drama", "Esporte"],
+      "streaming": ["Apple TV+"],
+      "overview": "Um treinador de futebol americano treina um time de futebol inglês.",
+      "rating": 8.8,
+      "year": 2020
+    },
+    {
+      "id": 119,
+      "title": "The Bear",
+      "type": "series",
+      "genres": ["Drama", "Comédia"],
+      "streaming": ["Star+", "Disney+"],
+      "overview": "Um chef de alta cozinha retorna a Chicago para administrar o restaurante da família.",
+      "rating": 8.6,
+      "year": 2022
+    },
+    {
+      "id": 120,
+      "title": "Abbott Elementary",
+      "type": "series",
+      "genres": ["Comédia"],
+      "streaming": ["Disney+", "Star+"],
+      "overview": "Professores em uma escola pública de Filadélfia enfrentam desafios com humor.",
+      "rating": 8.0,
+      "year": 2021
+    },
+    {
+      "id": 121,
+      "title": "La Casa de Papel",
+      "type": "series",
+      "genres": ["Ação", "Crime", "Suspense"],
+      "streaming": ["Netflix"],
+      "overview": "Um grupo de ladrões planeja o maior assalto da história da Espanha.",
+      "rating": 8.2,
+      "year": 2017
+    },
+    {
+      "id": 122,
+      "title": "You",
+      "type": "series",
+      "genres": ["Crime", "Drama", "Romance", "Suspense"],
+      "streaming": ["Netflix"],
+      "overview": "Um gerente de livraria se torna obcecado por uma cliente.",
+      "rating": 7.7,
+      "year": 2018
+    },
+    {
+      "id": 123,
+      "title": "Round 6",
+      "type": "series",
+      "genres": ["Ação", "Drama", "Suspense"],
+      "streaming": ["Netflix"],
+      "overview": "Pessoas endividadas competem em jogos mortais por um prêmio milionário.",
+      "rating": 8.0,
+      "year": 2021
+    },
+    {
+      "id": 124,
+      "title": "Narcos",
+      "type": "series",
+      "genres": ["Biografia", "Crime", "Drama"],
+      "streaming": ["Netflix"],
+      "overview": "A história do cartel de drogas de Pablo Escobar na Colômbia.",
+      "rating": 8.8,
+      "year": 2015
+    },
+    {
+      "id": 125,
+      "title": "Ozark",
+      "type": "series",
+      "genres": ["Crime", "Drama", "Suspense"],
+      "streaming": ["Netflix"],
+      "overview": "Um consultor financeiro se muda para os Ozarks para lavar dinheiro.",
+      "rating": 8.5,
+      "year": 2017
+    },
+    {
+      "id": 126,
+      "title": "Sintonia",
+      "type": "series",
+      "genres": ["Crime", "Drama"],
+      "streaming": ["Netflix"],
+      "overview": "Três amigos de São Paulo tentam alcançar seus sonhos no funk, no crime e na religião.",
+      "rating": 6.8,
+      "year": 2019
+    },
+    {
+      "id": 127,
+      "title": "Bom Dia, Verônica",
+      "type": "series",
+      "genres": ["Crime", "Drama", "Suspense"],
+      "streaming": ["Netflix"],
+      "overview": "Uma escrivã da polícia investiga crimes enquanto enfrenta sua própria vida pessoal.",
+      "rating": 7.4,
+      "year": 2020
+    },
+    {
+      "id": 128,
+      "title": "3%",
+      "type": "series",
+      "genres": ["Ação", "Drama", "Ficção Científica"],
+      "streaming": ["Netflix"],
+      "overview": "Em um futuro distópico, jovens competem por uma chance de viver no paraíso.",
+      "rating": 7.4,
+      "year": 2016
+    },
+    {
+      "id": 129,
+      "title": "Impuros",
+      "type": "series",
+      "genres": ["Ação", "Crime", "Drama"],
+      "streaming": ["Star+", "Disney+"],
+      "overview": "A história do tráfico de drogas na favela do Morro do Dendê no Rio de Janeiro.",
+      "rating": 7.8,
+      "year": 2018
+    },
+    {
+      "id": 130,
+      "title": "Arcane",
+      "type": "series",
+      "genres": ["Animação", "Ação", "Aventura", "Drama"],
+      "streaming": ["Netflix"],
+      "overview": "Duas irmãs se tornam inimigas em uma guerra entre cidades.",
+      "rating": 9.0,
+      "year": 2021
+    }
+  ]
+}
