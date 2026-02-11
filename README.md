@@ -36,7 +36,7 @@ O sistema opera em uma arquitetura cliente-servidor clássica, segregando respon
 
 A stack foi escolhida equilibrando performance e maturidade de segurança.
 
-*   **Frontend:** React 19, TypeScript, TailwindCSS, Shadcn/UI.
+*   **Frontend:** React 19, TypeScript, TailwindCSS, Shadcn/UI (Vite).
     *   *Análise:* O uso de TypeScript previne uma classe inteira de erros de tipo que poderiam levar a estados inseguros. Dependências auditadas via `npm audit`.
 *   **Backend:** Node.js, Express, MySQL2.
     *   *Análise:* Express é minimalista, mas exige middlewares de segurança adicionais (instalados: `helmet`, `cors`, `express-rate-limit`).
@@ -49,10 +49,13 @@ A stack foi escolhida equilibrando performance e maturidade de segurança.
 
 ```
 escolher-pra-mim/
-├── app/ (Frontend)
+├── app/ (Frontend - React/Vite)
 │   ├── .env              # ⚠️ CRÍTICO: Contém chaves públicas (TMDB). Não comitar.
-│   └── src/services/     # Lógica de comunicação com API. Ponto de atenção para XSS.
-├── server/ (Backend)
+│   ├── src/services/     # Lógica de comunicação com API. Ponto de atenção para XSS.
+│   └── banco/            # Scripts e Dumps do Banco de Dados
+│       ├── mybank.sql    # Schema do banco
+│       └── setup_db.ps1  # Script auxiliar de setup (Windows)
+├── server/ (Backend - Node/Express)
 │   ├── .env              # ⛔ ULTRA CRÍTICO: Segredos de Banco e JWT. JAMAIS comitar.
 │   ├── index.js          # Core da API. Contém middlewares de segurança.
 │   └── seed.sql          # Scripts de banco. Cuidado com dados de teste em prod.
@@ -116,8 +119,18 @@ Para rodar este projeto com a postura de segurança correta:
     ```
 
 4.  **Banco de Dados:**
-    *   Execute o script `app/banco/mybank.sql` para criar a estrutura.
+    *   **Opção Automática (Windows):** Execute o script auxiliar:
+        ```powershell
+        ./app/banco/setup_db.ps1
+        ```
+    *   **Opção Manual:**
+        *   Crie o banco `escolher_pra_mim`.
+        *   Importe o arquivo `app/banco/mybank.sql`.
     *   *Dica de Hardening:* Crie um usuário de banco específico para a aplicação, com permissões apenas de `SELECT, INSERT, UPDATE, DELETE` nas tabelas do projeto, revogando `DROP` ou `ALTER`.
+
+5.  **Rodar a Aplicação:**
+    *   Backend: `cd server && npm start` (ou `npm run dev`)
+    *   Frontend: `cd app && npm run dev`
 
 ---
 
