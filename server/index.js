@@ -39,7 +39,7 @@ const pool = mysql.createPool({
   host: process.env.DB_HOST || 'localhost',
   user: process.env.DB_USER || 'root',
   password: process.env.DB_PASSWORD || '',
-  database: process.env.DB_NAME || 'escolher_pra_mim',
+  database: process.env.DB_NAME || 'escolhe_pra_mim',
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0
@@ -58,7 +58,7 @@ const pool = mysql.createPool({
 
 // Test route
 app.get('/', (req, res) => {
-  res.json({ message: 'Escolher Pra Mim API is running!' });
+  res.json({ message: 'Escolhe Pra Mim API is running!' });
 });
 
 // Route to list contents (movies and series)

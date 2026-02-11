@@ -8,7 +8,7 @@ require('dotenv').config();
       host: process.env.DB_HOST || 'localhost',
       user: process.env.DB_USER || 'root',
       password: process.env.DB_PASSWORD || '',
-      database: process.env.DB_NAME || 'escolher_pra_mim',
+      database: process.env.DB_NAME || 'escolhe_pra_mim',
     });
 
     const [rows] = await pool.query('SELECT COUNT(*) as count FROM contents');

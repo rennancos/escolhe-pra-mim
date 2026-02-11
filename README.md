@@ -1,8 +1,8 @@
-# Escolher Pra Mim 🎬🛡️
+# Escolhe Pra Mim 🎬🛡️
 
 ## 1. Introdução e Proposta de Valor
 
-O **Escolher Pra Mim** é uma aplicação Fullstack projetada para resolver a "paralisia de escolha" em serviços de streaming. O sistema randomiza recomendações de filmes e séries com base em filtros inteligentes (Gênero, Streaming, Tipo), consumindo dados em tempo real da API do TMDB.
+O **Escolhe Pra Mim** é uma aplicação Fullstack projetada para resolver a "paralisia de escolha" em serviços de streaming. O sistema randomiza recomendações de filmes e séries com base em filtros inteligentes (Gênero, Streaming, Tipo), consumindo dados em tempo real da API do TMDB.
 
 Mais do que uma ferramenta de entretenimento, este projeto foi arquitetado como uma **prova de conceito de desenvolvimento seguro (Secure by Design)**. Cada decisão, da escolha do banco de dados à implementação da API, foi guiada por princípios de *Defense in Depth* (Defesa em Profundidade) e *Least Privilege* (Menor Privilégio).
 
@@ -48,7 +48,7 @@ A stack foi escolhida equilibrando performance e maturidade de segurança.
 ## 4. Estrutura do Projeto e Áreas Sensíveis
 
 ```
-escolher-pra-mim/
+escolhe-pra-mim/
 ├── app/ (Frontend - React/Vite)
 │   ├── .env              # ⚠️ CRÍTICO: Contém chaves públicas (TMDB). Não comitar.
 │   ├── src/services/     # Lógica de comunicação com API. Ponto de atenção para XSS.
@@ -107,7 +107,7 @@ Para rodar este projeto com a postura de segurança correta:
     DB_HOST=localhost
     DB_USER=root
     DB_PASSWORD=sua_senha_forte
-    DB_NAME=escolher_pra_mim
+    DB_NAME=escolhe_pra_mim
     JWT_SECRET=gere_uma_string_aleatoria_longa_e_complexa_aqui
     PORT=3000
     ```
@@ -124,7 +124,7 @@ Para rodar este projeto com a postura de segurança correta:
         ./app/banco/setup_db.ps1
         ```
     *   **Opção Manual:**
-        *   Crie o banco `escolher_pra_mim`.
+        *   Crie o banco `escolhe_pra_mim`.
         *   Importe o arquivo `app/banco/mybank.sql`.
     *   *Dica de Hardening:* Crie um usuário de banco específico para a aplicação, com permissões apenas de `SELECT, INSERT, UPDATE, DELETE` nas tabelas do projeto, revogando `DROP` ou `ALTER`.
 

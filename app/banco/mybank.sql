@@ -1,6 +1,6 @@
 -- Criação do Banco de Dados
-CREATE DATABASE IF NOT EXISTS escolher_pra_mim;
-USE escolher_pra_mim;
+CREATE DATABASE IF NOT EXISTS escolhe_pra_mim;
+USE escolhe_pra_mim;
 
 -- Tabela de Usuários
 CREATE TABLE IF NOT EXISTS users (
