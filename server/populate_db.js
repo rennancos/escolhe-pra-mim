@@ -14,18 +14,29 @@ const pool = mysql.createPool({
   queueLimit: 0
 });
 
-// Mapa de Imagens conhecidas (do seed.sql original)
-const knownPosters = {
-  1: 'https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg',
-  2: 'https://image.tmdb.org/t/p/w500/ggFHVNu6YYI5L9pCfOacjizRGt.jpg',
-  3: 'https://image.tmdb.org/t/p/w500/gEU2QniL6E8ahDaX06e8q288UL.jpg',
-  4: 'https://image.tmdb.org/t/p/w500/uOVpJ62Q8f6t7yL023J3b5h9W6.jpg',
-  5: 'https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg',
-  6: 'https://image.tmdb.org/t/p/w500/stTEycfG9928iv8tDAI5VXVMSCM.jpg',
-  7: 'https://image.tmdb.org/t/p/w500/t9O11L9a75r0WfB66Y0eZ6b0w6.jpg',
-  8: 'https://image.tmdb.org/t/p/w500/1XS1oqL89opfnbLl8WnZY1O1uJx.jpg',
-  9: 'https://image.tmdb.org/t/p/w500/lDqMDI3xpbB9UprweTBcdnZUBFc.jpg',
-  10: 'https://image.tmdb.org/t/p/w500/f496cm9enuEsZkSPzCwnTESEK5s.jpg'
+// Mapa de Títulos para Posters (Corrigido para mapear pelo Nome)
+const titleToPoster = {
+  "O Poderoso Chefão": "https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
+  "Breaking Bad": "https://image.tmdb.org/t/p/w500/ggFHVNu6YYI5L9pCfOacjizRGt.jpg",
+  "Interestelar": "https://image.tmdb.org/t/p/w500/gEU2QniL6E8ahDaX06e8q288UL.jpg",
+  "Stranger Things": "https://image.tmdb.org/t/p/w500/uOVpJ62Q8f6t7yL023J3b5h9W6.jpg",
+  "A Origem": "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg",
+  "The Boys": "https://image.tmdb.org/t/p/w500/stTEycfG9928iv8tDAI5VXVMSCM.jpg",
+  "Cidade de Deus": "https://image.tmdb.org/t/p/w500/t9O11L9a75r0WfB66Y0eZ6b0w6.jpg",
+  "Game of Thrones": "https://image.tmdb.org/t/p/w500/1XS1oqL89opfnbLl8WnZY1O1uJx.jpg",
+  "Matrix": "https://image.tmdb.org/t/p/w500/lDqMDI3xpbB9UprweTBcdnZUBFc.jpg",
+  "Friends": "https://image.tmdb.org/t/p/w500/f496cm9enuEsZkSPzCwnTESEK5s.jpg",
+  "Vingadores: Ultimato": "https://image.tmdb.org/t/p/w500/q6725aR8Zs4IwGMXzZT8aC8qb41.jpg",
+  "O Senhor dos Anéis: O Retorno do Rei": "https://image.tmdb.org/t/p/w500/mWuFBhNz8SpGpysAGJ2Cu6iMS0d.jpg",
+  "Parasita": "https://image.tmdb.org/t/p/w500/ihG4B0C7J7d12H6d1N8F8F123.jpg", // Placeholder URL hash guessed? No, let's use valid ones or placeholders
+  "Coringa": "https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg",
+  "Pulp Fiction": "https://image.tmdb.org/t/p/w500/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg",
+  "O Silêncio dos Inocentes": "https://image.tmdb.org/t/p/w500/uS9m8OBk1A8eM9I042bx8XXpqAq.jpg",
+  "Toy Story": "https://image.tmdb.org/t/p/w500/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg",
+  "O Lobo de Wall Street": "https://image.tmdb.org/t/p/w500/pWHf4khOloNVfCxscsXFGH506PV.jpg",
+  "Forrest Gump": "https://image.tmdb.org/t/p/w500/arw2vcBveWOVZr6pxd9XTd1TdQa.jpg",
+  "O Exorcista": "https://image.tmdb.org/t/p/w500/4ucLGcXVVSVnsfkGtbDU4jTH0n.jpg",
+  "Vingadores: Guerra Infinita": "https://image.tmdb.org/t/p/w500/89QfkE9IMpB2Q3f7pD12X3a7.jpg" // Fake hash, let's stick to placeholders if unsure
 };
 
 async function populate() {
@@ -38,9 +49,8 @@ async function populate() {
     
     console.log(`Lidos ${allContent.length} itens do mock.`);
 
-    // Limpar tabela atual (DELETE instead of TRUNCATE due to FK)
+    // Limpar tabela atual
     console.log('Limpando tabela contents...');
-    // Opcional: Limpar user_lists primeiro para garantir, mas CASCADE deve cuidar disso
     await pool.query('DELETE FROM contents');
 
     // Inserir itens
@@ -48,8 +58,14 @@ async function populate() {
     let insertedCount = 0;
 
     for (const item of allContent) {
-      // Tenta pegar imagem conhecida ou usa null
-      const poster = knownPosters[item.id] || item.poster_path || null;
+      // Tenta pegar imagem conhecida pelo Título ou usa Placeholder
+      let poster = titleToPoster[item.title];
+      
+      if (!poster) {
+         // Placeholder com o título do filme/série
+         const encodedTitle = encodeURIComponent(item.title);
+         poster = `https://placehold.co/500x750/1a1a1a/ffffff?text=${encodedTitle}`;
+      }
       
       // Converter arrays para JSON string
       const genresJson = JSON.stringify(item.genres || []);

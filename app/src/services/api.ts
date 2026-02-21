@@ -1,10 +1,37 @@
-import type { Content } from '@/types';
+import type { Content, FilterOptions } from '@/types';
 
 const API_URL = 'http://localhost:3000/api';
 
-export async function getContents(): Promise<Content[]> {
+export async function getContents(filters?: FilterOptions): Promise<Content[]> {
   try {
-    const response = await fetch(`${API_URL}/contents`);
+    let url = `${API_URL}/contents`;
+    
+    // Build query string if filters are provided
+    if (filters) {
+      const params = new URLSearchParams();
+      
+      if (filters.type && filters.type !== 'all') {
+        params.append('type', filters.type);
+      }
+      
+      if (filters.genres && filters.genres.length > 0) {
+        // Send as comma-separated values or repeated params depending on backend expectation
+        // Our backend expects comma-separated or array. URLSearchParams usually does repeated keys for append()
+        // But backend handles comma-separated string too. Let's use comma-separated for simplicity.
+        params.append('genres', filters.genres.join(','));
+      }
+      
+      if (filters.streaming && filters.streaming.length > 0) {
+        params.append('streaming', filters.streaming.join(','));
+      }
+      
+      const queryString = params.toString();
+      if (queryString) {
+        url += `?${queryString}`;
+      }
+    }
+
+    const response = await fetch(url);
     if (!response.ok) {
       throw new Error('Erro ao buscar conteúdos');
     }
