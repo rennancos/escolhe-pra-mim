@@ -6,17 +6,9 @@ USE escolhe_pra_mim;
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) UNIQUE NOT NULL,
-    password VARCHAR(255), -- Em produção, use hash!
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
--- Tabela de Configurações do Usuário
-CREATE TABLE IF NOT EXISTS user_settings (
-    user_id INT PRIMARY KEY,
-    include_watched_in_draw BOOLEAN DEFAULT FALSE,
-    dark_mode BOOLEAN DEFAULT FALSE,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
 -- Tabela de Conteúdos (Filmes/Séries)
@@ -34,7 +26,15 @@ CREATE TABLE IF NOT EXISTS contents (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Tabela de Listas do Usuário (Relacionamento N:N entre Users e Contents)
+-- Tabela de Configurações do Usuário
+CREATE TABLE IF NOT EXISTS user_settings (
+    user_id INT PRIMARY KEY,
+    include_watched_in_draw BOOLEAN DEFAULT FALSE,
+    dark_mode BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+-- Tabela de Listas do Usuário (Relacionamento N:N)
 CREATE TABLE IF NOT EXISTS user_lists (
     user_id INT,
     content_id INT,
@@ -44,12 +44,3 @@ CREATE TABLE IF NOT EXISTS user_lists (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (content_id) REFERENCES contents(id) ON DELETE CASCADE
 );
-
--- Inserir um usuário de teste
-INSERT INTO users (name, email, password) VALUES ('Usuário Teste', 'teste@exemplo.com', '123456')
-ON DUPLICATE KEY UPDATE name=name;
-
--- Inicializar configurações do usuário de teste
-INSERT INTO user_settings (user_id, include_watched_in_draw, dark_mode) 
-SELECT id, FALSE, FALSE FROM users WHERE email = 'teste@exemplo.com'
-ON DUPLICATE KEY UPDATE user_id=user_id;

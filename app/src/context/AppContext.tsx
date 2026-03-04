@@ -1,8 +1,8 @@
 import { createContext, useContext, useState, useEffect, useCallback, type ReactNode } from 'react';
 import { getSettings, saveSettings, getWatchedIds } from '@/services';
-import { discoverContent, getWatchProviders } from '@/services/tmdbService';
+import { getWatchProviders } from '@/services/tmdbService';
 import type { Content, FilterOptions } from '@/types';
-import { getContents } from '@/services/api';
+import { getContents, getMe, logoutUser as apiLogout } from '@/services/api';
 
 interface User {
   id?: number;
@@ -14,7 +14,7 @@ interface AppContextType {
   // Auth state
   user: User | null;
   isAuthenticated: boolean;
-  login: (user: User, token: string) => void;
+  login: (user: User) => void;
   logout: () => void;
 
   darkMode: boolean;
@@ -58,12 +58,10 @@ export function AppProvider({ children }: AppProviderProps) {
   const [results, setResults] = useState<Content[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [lastFilters, setLastFilters] = useState<FilterOptions | null>(null);
-  const [catalog, setCatalog] = useState<Content[]>([]);
-
   // Carregar catálogo da API
   useEffect(() => {
-    getContents().then(data => {
-      setCatalog(data);
+    getContents().then(() => {
+      // Catalog is now ready; any side-effects can be added here if needed
     });
   }, []);
 
@@ -73,20 +71,26 @@ export function AppProvider({ children }: AppProviderProps) {
     setDarkMode(settings.darkMode);
     setIncludeWatchedInDraw(settings.includeWatchedInDraw);
     
-    // Recuperar sessão
-    const storedToken = localStorage.getItem('token');
-    const storedUser = localStorage.getItem('user');
-    
-    if (storedToken && storedUser) {
+    // Tenta validar a sessão via cookie HTTP-only
+    const checkAuth = async () => {
       try {
-        setUser(JSON.parse(storedUser));
+        const userData = await getMe();
+        if (userData) {
+          setUser(userData);
+          localStorage.setItem('user', JSON.stringify(userData));
+        } else {
+          // Se falhar (401), limpa dados locais antigos
+          localStorage.removeItem('user');
+          setUser(null);
+        }
       } catch (e) {
-        console.error('Erro ao restaurar sessão:', e);
-        localStorage.removeItem('token');
+        console.error('Erro ao validar sessão:', e);
         localStorage.removeItem('user');
+        setUser(null);
       }
-    }
-    
+    };
+
+    checkAuth();
     setIsInitialized(true);
   }, []);
 
@@ -125,11 +129,8 @@ export function AppProvider({ children }: AppProviderProps) {
       // Mas mantemos um mínimo para não piscar
       const minDelay = new Promise(resolve => setTimeout(resolve, 800));
       
-      // Sorteia uma página aleatória para variar os resultados
-      const randomPage = Math.floor(Math.random() * 10) + 1;
-      
-      // Busca conteúdo da API (ou Mock, dependendo da config no serviço)
-      const fetchPromise = discoverContent(filters.type, randomPage, filters);
+      // Busca conteúdo da API Backend (que agora suporta filtros robustos)
+      const fetchPromise = getContents(filters);
       
       const [_, fetchedResults] = await Promise.all([minDelay, fetchPromise]);
 
@@ -194,15 +195,15 @@ export function AppProvider({ children }: AppProviderProps) {
     setLastFilters(null);
   }, []);
 
-  const login = (userData: User, token: string) => {
+  const login = (userData: User) => {
     setUser(userData);
-    localStorage.setItem('token', token);
+    // Token is now in HttpOnly cookie
     localStorage.setItem('user', JSON.stringify(userData));
   };
 
   const logout = () => {
+    apiLogout(); // Limpa cookie no backend
     setUser(null);
-    localStorage.removeItem('token');
     localStorage.removeItem('user');
   };
 

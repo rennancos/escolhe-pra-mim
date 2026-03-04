@@ -20,10 +20,18 @@ export function Footer() {
         </div>
 
         {/* Links */}
-        <div className="flex items-center gap-4 text-sm text-muted-foreground">
+        <div className="flex flex-col items-center gap-1 text-sm text-muted-foreground">
           <span className="flex items-center gap-1">
             Feito com <Heart className="h-3 w-3 fill-red-500 text-red-500" /> para indecisos
           </span>
+          <a 
+            href="https://github.com/rennancos" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-xs hover:text-violet-600 transition-colors"
+          >
+            Desenvolvido por @rennancos
+          </a>
         </div>
 
         {/* API Credit */}
