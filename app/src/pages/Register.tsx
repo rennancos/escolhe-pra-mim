@@ -49,7 +49,7 @@ export default function Register() {
       toast.success('Usuário cadastrado com sucesso!');
       
       // Auto-login
-      login(data.user, data.token);
+      login(data.user);
       
       // Redireciona para home
       navigate('/');

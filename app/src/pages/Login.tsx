@@ -34,7 +34,7 @@ export default function Login() {
       toast.success('Login realizado com sucesso!');
       
       // Atualiza o contexto com usuário e token
-      login(data.user, data.token);
+      login(data.user);
       
       // Redireciona para home
       navigate('/');

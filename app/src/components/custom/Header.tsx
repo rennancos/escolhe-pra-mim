@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Film, Moon, Sun, List, CheckCircle, Home, LogOut, User as UserIcon, LogIn } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useApp } from '@/context/AppContext';
+import { AuthDialog } from '@/components/custom/AuthDialog';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -101,18 +102,19 @@ export function Header() {
             </>
           ) : (
             <div className="flex items-center gap-2">
-              <Link to="/login">
+              <AuthDialog defaultTab="login">
                 <Button variant="ghost" size="sm" className="gap-1.5">
                   <LogIn className="h-4 w-4" />
                   <span className="hidden sm:inline">Entrar</span>
                 </Button>
-              </Link>
-              <Link to="/register">
+              </AuthDialog>
+              
+              <AuthDialog defaultTab="register">
                 <Button size="sm" className="gap-1.5">
                   <UserIcon className="h-4 w-4" />
                   <span className="hidden sm:inline">Cadastrar</span>
                 </Button>
-              </Link>
+              </AuthDialog>
             </div>
           )}
 
